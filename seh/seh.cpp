@@ -3,10 +3,14 @@
 // See: https://cristianadam.eu/20160914/nullpointerexception-in-c-plus-plus/
 //
 
+#ifdef _WINDOWS
 #include "stdafx.h"
 
 #include <eh.h>
 #include <windows.h>
+#else
+#include <signal.h>
+#endif
 
 #include <memory>
 #include <sstream>
@@ -130,12 +134,12 @@ void signalHandler(int sgn, siginfo_t *info, void *)
 {
     if (sgn == SIGSEGV && info->si_addr == 0)
     {
-        throw null_pointer_exception();
+        throw except::null_pointer_exception();
     }
 
     if (sgn == SIGFPE && (info->si_code == FPE_INTDIV || info->si_code == FPE_FLTDIV))
     {
-        throw division_by_zero_exception();
+        throw except::division_by_zero_exception();
     }
 
     std::ostringstream os;
@@ -321,7 +325,8 @@ int main(int argc, char* argv[])
     std::set_terminate(terminateHandler);
    
     auto callList = processArguments(argc, argv);
-    for (int i = 0; i < 10 && callList.size(); ++i)
+//    for (int i = 0; i < 10 && callList.size(); ++i)
+    for (int i = 0; i < 1 && callList.size(); ++i)
     {
         std::cout << i << "------------------------------------" << std::endl;
         for (auto func : callList)
