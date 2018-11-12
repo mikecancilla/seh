@@ -1,3 +1,0 @@
-﻿  seh.cpp
-seh.obj : error LNK2019: unresolved external symbol "void __cdecl register_for_os_exceptions(void)" (?register_for_os_exceptions@@YAXXZ) referenced in function _main
-D:\src\mike\seh\seh\Debug\seh.exe : fatal error LNK1120: 1 unresolved externals

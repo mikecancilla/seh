@@ -1,9 +1,0 @@
-﻿  seh.cpp
-  stdafx.cpp
-  Generating code
-  0 of 606 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    30 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  seh.vcxproj -> D:\src\mike\seh\seh\x64\Release\seh.exe
-  seh.vcxproj -> D:\src\mike\seh\seh\x64\Release\seh.pdb (Full PDB)
