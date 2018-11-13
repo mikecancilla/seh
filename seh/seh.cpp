@@ -3,7 +3,7 @@
 // See: https://cristianadam.eu/20160914/nullpointerexception-in-c-plus-plus/
 //
 
-#ifdef _WINDOWS
+#ifdef USE_WINDOWS_SE
 #include "stdafx.h"
 
 #include <eh.h>
